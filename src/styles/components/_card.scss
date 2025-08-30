@@ -30,7 +30,7 @@
   box-sizing: border-box;
   cursor: pointer;
 
-  transition: transform 300ms;
+  transition: transform $transition-300;
 
   &__img {
     width: 160px;
@@ -48,7 +48,7 @@
     line-height: 1.5;
     color: $main-accent;
     margin-bottom: 4px;
-    transform: color 300ms;
+    transition: color $transition-300;
   }
 
   &:hover {

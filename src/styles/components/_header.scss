@@ -32,6 +32,7 @@
     height: 60px;
     display: inline-block;
     line-height: 60px;
+    transition: color $transition-300;
     &.is-active {
       color: $blue-accent;
       position: relative;
