@@ -1,41 +1,41 @@
 @use '../utils/variables' as *;
 
-.container {
-  $column-count: 1;
-
+.catalog__grid {
   display: grid;
-  gap: 46px 48px;
+  gap: $gap-md $gap-lg;
   justify-content: center;
   justify-items: center;
-  padding: 50px 40px;
+  padding: $pad-lg $pad-md;
+
+  grid-template-columns: repeat(1, $card-width);
 
   @media screen and (min-width: 488px) {
-    $column-count: 2;
+    grid-template-columns: repeat(2, $card-width);
   }
 
   @media screen and (min-width: 768px) {
-    $column-count: 3;
+    grid-template-columns: repeat(3, $card-width);
   }
 
   @media screen and (min-width: 1024px) {
-    $column-count: 4;
+    grid-template-columns: repeat(4, $card-width);
   }
-
-  grid-template-columns: repeat($column-count, 200px);
 }
 
 .card {
-  width: 200px;
   border: 1px solid $gray-elements;
   border-radius: 5px;
   background: $white;
   padding: 32px 16px 16px;
   box-sizing: border-box;
+  transition:
+    color 300ms,
+    transform 300ms;
+  cursor: pointer;
 
   &__img {
     width: 160px;
     height: 134px;
-    display: block;
     margin: 0 auto 40px;
   }
 
@@ -101,6 +101,14 @@
       border: 1px solid $blue-accent;
       background: $white;
       color: $blue-accent;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    & .card__title {
+      color: $hover-color;
     }
   }
 }
